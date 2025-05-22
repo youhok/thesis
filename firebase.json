@@ -1,0 +1,47 @@
+{
+  "flutter": {
+    "platforms": {
+      "android": {
+        "default": {
+          "projectId": "thesis-sangkaestay",
+          "appId": "1:179320462747:android:aa5e1aef21521c92a1953e",
+          "fileOutput": "android/app/google-services.json"
+        }
+      },
+      "dart": {
+        "lib/firebase_options.dart": {
+          "projectId": "thesis-sangkaestay",
+          "configurations": {
+            "android": "1:179320462747:android:aa5e1aef21521c92a1953e",
+            "ios": "1:179320462747:ios:5c3fb43fe93f251ba1953e",
+            "web": "1:179320462747:web:542d064b9c9a4204a1953e"
+          }
+        }
+      }
+    }
+  },
+  "functions": [
+    {
+      "source": "functions",
+      "codebase": "default",
+      "ignore": [
+        "node_modules",
+        ".git",
+        "firebase-debug.log",
+        "firebase-debug.*.log",
+        "*.local"
+      ]
+    },
+    {
+      "source": "sangkaestayserver",
+      "codebase": "sangkaestayserver",
+      "ignore": [
+        "node_modules",
+        ".git",
+        "firebase-debug.log",
+        "firebase-debug.*.log",
+        "*.local"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,340 @@
+{
+  "intro_1": {
+    "title": "ស្វែងរកទ្រព្យសម្បត្តិរបស់អ្នក",
+    "description": "ស្វែងយល់ពីអចលនទ្រព្យជាច្រើនដែលតម្រូវតាមតម្រូវការរបស់អ្នក ចាប់ពីអាផាតមិនដ៏កក់ក្ដៅ រហូតដល់ផ្ទះធំទូលាយ។",
+    "next": "បន្ទាប់"
+  },
+  "intro_2": {
+    "title": "ប្រមូលជួលបានយ៉ាងងាយស្រួល",
+    "description": "សម្រួលការគ្រប់គ្រងការជួលដោយងាយស្រួលតាមដាន និងរំលឹកការទូទាត់",
+    "next": "បន្ទាប់"
+  },
+  "signup_landlord": {
+    "title": "ចុះឈ្មោះជាម្ចាស់ផ្ទះ",
+    "name_label": "ឈ្មោះ",
+    "name_hint": "បញ្ចូលឈ្មោះរបស់អ្នក",
+    "email_label": "អ៊ីមែល",
+    "email_hint": "បញ្ចូលអ៊ីមែលរបស់អ្នក",
+    "phone_label": "លេខទូរស័ព្ទ",
+    "phone_hint": "បញ្ចូលលេខទូរស័ព្ទរបស់អ្នក",
+    "password_label": "ពាក្យសម្ងាត់",
+    "password_hint": "បញ្ចូលពាក្យសម្ងាត់របស់អ្នក",
+    "upload_id_card": "ផ្ទុកអត្តសញ្ញាណបណ្ណ",
+    "sign_up": "ចុះឈ្មោះ",
+    "already_have_account": "មានគណនីរួចហើយ?",
+    "sign_in": "ចូល"
+  },
+  "signin_landlord": {
+    "title": "ចូលជាម្ចាស់ផ្ទះ",
+    "phone_email_label": "លេខទូរស័ព្ទ / អ៊ីមែល",
+    "phone_email_hint": "បញ្ចូលលេខទូរស័ព្ទ ឬ អ៊ីមែលរបស់អ្នក",
+    "password_label": "ពាក្យសម្ងាត់",
+    "password_hint": "បញ្ចូលពាក្យសម្ងាត់របស់អ្នក",
+    "forgot_password": "ភ្លេចពាក្យសម្ងាត់?",
+    "sign_in": "ចូល",
+    "already_have_account": "មានគណនីរួចហើយ?",
+    "sign_up": "ចុះឈ្មោះ"
+  },
+  "role": {
+    "title": "អ្នកជាអ្នកណា?",
+    "description": "សូមជ្រើសរើសតួនាទីរបស់អ្នកដើម្បីបន្ត និងរុករកមុខងារដែលបានកំណត់ដែលត្រូវបានរចនាឡើងសម្រាប់តែអ្នកប៉ុណ្ណោះ។",
+    "landlord": "ម្ចាស់​ផ្ទះ",
+    "managelandlord": "គ្រប់គ្រងទ្រព្យសម្បត្តិផ្ទាល់ខ្លួនរបស់អ្នក",
+    "ជួល": "អ្នកជួល",
+    "managetenants": "ចូលទៅក្នុងគណនីជួលរបស់អ្នក"
+  },
+  "signin_tenant": {
+    "signInAsTenant": "ចូលជាអ្នកជួល",
+    "Email": "អ៊ីមែល",
+    "enterEmail": "អ៊ីមែលរបស់អ្នក",
+    "password": "ពាក្យសម្ងាត់",
+    "enterPassword": "បញ្ចូលពាក្យសម្ងាត់របស់អ្នក",
+    "forgotPassword": "ភ្លេចពាក្យសម្ងាត់?",
+    "signIn": "ចូល",
+    "orSignUpWithGmail": "ឬ ចុះឈ្មោះតាមរយៈ Gmail",
+    "signUpWithGoogle": "ចុះឈ្មោះជាមួយ Google",
+    "alreadyHaveAccount": "មានគណនីរួចហើយ?",
+    "signUp": "ចុះឈ្មោះ",
+    "language": "ភាសា"
+  },
+  "signup_tenant": {
+    "signUpAsTenant": "ចុះឈ្មោះជាអ្នកជួល",
+    "name": "ឈ្មោះ",
+    "enterName": "បញ្ចូលឈ្មោះរបស់អ្នក",
+    "Email": "អ៊ីមែល",
+    "enterEmail": "បញ្ចូលអ៊ីមែល",
+    "password": "ពាក្យសម្ងាត់",
+    "enterPassword": "បញ្ចូលពាក្យសម្ងាត់របស់អ្នក",
+    "signUp": "ចុះឈ្មោះ",
+    "orSignUpWithGmail": "ឬ ចុះឈ្មោះតាមរយៈ Gmail",
+    "signUpWithGoogle": "ចុះឈ្មោះជាមួយ Google",
+    "alreadyHaveAccount": "មានគណនីរួចហើយ?",
+    "signIn": "ចូល"
+  },
+  "forget_password_screen": {
+    "forgetpassword": "ភ្លេចពាក្យសម្ងាត់",
+    "label": "អ៊ីមែល",
+    "placeholder": "បញ្ចូលអ៊ីមែលរបស់អ្នក",
+    "continue": "បន្ត",
+    "alreadyHaveAccount": "មានគណនីរួចហើយ?",
+    "signIn": "ចូល"
+  },
+  "loading_screen": {
+    "findroom": "ស្វែងរកបន្ទប់ និងគ្រប់គ្រងអចលនទ្រព្យ"
+  },
+  "verification": {
+    "verify": "ផ្ទៀងផ្ទាត់",
+    "resendcode": "ផ្ញើលេខកូដឡើងវិញ"
+  },
+  "property_list": {
+    "title": "អចលនទ្រព្យ",
+    "search_placeholder": "ស្វែងរកចំណងជើង/លេខសម្គាល់អចលនទ្រព្យ"
+  },
+  "add_property_step_1": {
+    "title": "បន្ថែមអចលនទ្រព្យថ្មី",
+    "update_title": "ធ្វើបច្ចុប្បន្នភាពអចលនទ្រព្យ",
+    "section_title": "ចាប់ផ្តើមគ្រប់គ្រងអចលនទ្រព្យរបស់អ្នក",
+    "property_name": "ឈ្មោះអចលនទ្រព្យ",
+    "address": "អាសយដ្ឋាន",
+    "set_location": "កំណត់ទីតាំង",
+    "add_images": "បន្ថែមរូបភាព",
+    "description_optional": "សេចក្ដីពិពណ៌នា (ជាជម្រើស)",
+    "enter_description": "បញ្ចូលសេចក្ដីពិពណ៌នា",
+    "next": "បន្ត"
+  },
+  "add_property_step_2": {
+    "water_price": "តម្លៃទឹក",
+    "electricity_price": "តម្លៃអគ្គិសនី",
+    "garbage_price": "សេវាកំចាត់សំរាម",
+    "internet_price": "អ៊ីនធឺណិត",
+    "add_property": "បន្ថែមអចលនទ្រព្យ"
+  },
+  "property_detail": {
+    "title": "ព័ត៌មានអំពីអចលនទ្រព្យ",
+    "location": "ទីតាំង",
+    "property_id": "លេខសម្គាល់អចលនទ្រព្យ",
+    "rooms": "បន្ទប់",
+    "price_per_month": "តម្លៃជួល / ខែ",
+    "description": "ការពិពណ៌នា",
+    "room_feature": "លក្ខណៈពិសេសបន្ទប់",
+    "location_on_map": "ទីតាំងនៅលើផែនទី",
+    "delete_property": "លុបអចលនទ្រព្យនេះ?",
+    "edit": "កែសម្រួល",
+    "manage_rooms": "គ្រប់គ្រងបន្ទប់",
+    "utilities": {
+      "electricity": "អគ្គិសនី",
+      "water": "ទឹក",
+      "garbage": "សេវាកំចាត់សំរាម",
+      "internet": "អ៊ីនធឺណិត"
+    }
+  },
+  "add_room_screen": {
+    "addnewroom": "បន្ថែមបន្ទប់ថ្មី",
+    "edit_room": "កែសម្រួលបន្ទប់",
+    "selectproperty": "ជ្រើសរើសអចលនទ្រព្យ",
+    "Numberofroom": "ចំនួនបន្ទប់ដែលត្រូវបង្កើត",
+    "Number_name": "ឈ្មោះលេខ",
+    "Roomprice": "តម្លៃបន្ទប់",
+    "isavailable": "អាចប្រើបាន",
+    "ស្ថានភាព": "ស្ថានភាព",
+    "room_features": "លក្ខណៈពិសេសបន្ទប់",
+    "AddRoom": "បន្ថែមបន្ទប់",
+    "update_room": "បន្ទប់ធ្វើបច្ចុប្បន្នភាព"
+  },
+  "tenant": {
+    "title": "អ្នកជួល",
+    "placeholders": "ស្វែងរកឈ្មោះ/លេខទូរស័ព្ទ"
+  },
+  "add_tenant": {
+    "assign_to_room": "កំណត់ជូនបន្ទប់",
+    "assign_to_property": "កំណត់ជូនអចលនទ្រព្យ",
+    "full_name": "ឈ្មោះពេញ",
+    "gender": "ភេទ",
+    "date_of_birth": "ថ្ងៃកំណើត",
+    "move_in_date": "ថ្ងៃចូលអាសន្ន",
+    "profession": "មុខរបរ",
+    "address": "អាសយដ្ឋាន",
+    "phone_number": "លេខទូរស័ព្ទ",
+    "telegram_phone_number": "លេខទូរស័ព្ទ Telegram/ឈ្មោះអ្នកប្រើប្រាស់ (ជាជម្រើស)",
+    "id_card": "កាតអត្តសញ្ញាណ",
+    "submit": "ដាក់ស្នើ",
+    "add_tenant": "បន្ថែមអ្នកជួល",
+    "placeholders": {
+      "enter_full_name": "បញ្ចូលឈ្មោះពេញ",
+      "enter_profession": "បញ្ចូលមុខរបរ",
+      "enter_address": "បញ្ចូលអាសយដ្ឋាន",
+      "enter_phone_number": "បញ្ចូលលេខទូរស័ព្ទ",
+      "enter_telegram_contact": "បញ្ចូលទំនាក់ទំនង Telegram"
+    },
+    "labels": {
+      "male": "ប្រុស",
+      "female": "ស្រី"
+    }
+  },
+  "tenant_detail": {
+    "title": "ព័ត៌មានអាជីខិល",
+    "property_id": "លេខសម្គាល់អចលនទ្រព្យ",
+    "room_id": "លេខសម្គាល់បន្ទប់",
+    "address": "អាសយដ្ឋាន",
+    "date_of_birth": "ថ្ងៃខែឆ្នាំកំណើត",
+    "profession": "មុខរបរ"
+  },
+  "invoice_list": {
+    "title": "បញ្ជីវិក័យបត្រ",
+    "placeholders": "ស្វែងរកឈ្មោះ"
+  },
+  "invoice_detail": {
+    "title": "ព័ត៌មានវិក័យបត្រ"
+  },
+  "generate_invoice": {
+    "title": "បង្កើតវិក័យប័ត្រថ្មី",
+    "edit_invoice": "កែសម្រួលវិក្កយបត្រ",
+    "tenants": "អ្នកជួល",
+    "choose_tenant": "ជ្រើសរើសអ្នកជួល",
+    "pay_date": "កាលបរិច្ឆេទបង់ប្រាក់",
+    "rent_type": "ប្រភេទរយៈពេល",
+    "monthly": "ខែ",
+    "year": "ឆ្នាំ",
+    "new_water": {
+      "label": "ការប្រើប្រាស់ទឹកថ្មី",
+      "placeholder": "បញ្ចូលការប្រើប្រាស់ទឹកបច្ចុប្បន្ន"
+    },
+    "new_electricity": {
+      "label": "ការប្រើប្រាស់អគ្គិសនីថ្មី",
+      "placeholder": "បញ្ចូលការប្រើប្រាស់អគ្គិសនីបច្ចុប្បន្ន"
+    },
+    "old_water": {
+      "label": "ការប្រើប្រាស់ទឹកមុន",
+      "placeholder": "បញ្ចូលការប្រើប្រាស់ទឹកមុន"
+    },
+    "old_electricity": {
+      "label": "ការប្រើប្រាស់អគ្គិសនីមុន",
+      "placeholder": "បញ្ចូលការប្រើប្រាស់អគ្គិសនីមុន"
+    },
+    "usage_water_unit": "ការប្រើប្រាស់ទឹក: {unit} គ្រឿង",
+    "usage_electricity_unit": "ការប្រើប្រាស់អគ្គិសនី: {unit} គ្រឿង",
+    "total": "សរុប",
+    "ispaid": "សម្គាល់ថាបានបង់ប្រាក់",
+    "update": "ធ្វើបច្ចុប្បន្នភាពវិក្កយបត្រ",
+    "generate": "បង្កើតវិក័យប័ត្រ",
+    "cancel": "បោះបង់"
+  },
+  "booking": {
+    "title": "ការកក់ទុក",
+    "search_placeholder": "ស្វែងរកឈ្មោះកក់...",
+    "edit_booking": "កែសម្រួលការកក់",
+    "pending": "កំពុង​រង់ចាំ",
+    "approved": "អនុម័ត",
+    "rejected": "បដិសេធ",
+    "profession": "វិជ្ជាជីវៈ",
+    "address": "អាសយដ្ឋាន",
+    "telegram": "តេឡេក្រាម",
+    "rent_type": "ប្រភេទជួល",
+    "rent_duration": "រយៈពេលជួល",
+    "create_at": "បាន​បង្កើត​នៅ",
+    "move_in": "ផ្លាស់ទី​ចូល",
+    "move_out": "ផ្លាស់ទីចេញ",
+    "id_card": "អត្តសញ្ញាណប័ណ្ណ",
+    "utilities": {
+      "reject": "បដិសេធ",
+      "approve": "អនុម័ត"
+    },
+    "name": "ឈ្មោះ",
+    "phone_number": "លេខទូរស័ព្ទ",
+    "placeholder": "បញ្ចូលលេខ",
+    "select_rooms": "ជ្រើសរើសបន្ទប់",
+    "status": "ស្ថានភាព",
+    "add_booking": "បន្ថែមការកក់",
+    "update_booking": "ធ្វើបច្ចុប្បន្នភាពការកក់"
+  },
+  "transaction": {
+    "title": "ប្រតិបត្តិការ",
+    "placeholder": "កាលបរិច្ឆេទស្វែងរក"
+  },
+  "dashboardlandlord": {
+    "title": "ផ្ទាំងគ្រប់គ្រង",
+    "total_property": "អចលនទ្រព្យសរុប",
+    "total_tenants": "អ្នកជួលសរុប",
+    "total_rooms": "បន្ទប់សរុប",
+    "recent_tenants": "អ្នកជួលថ្មីៗ",
+    "view_all": "មើលទាំងអស់"
+  },
+  "drawerlandlord": {
+    "dashboard": "ផ្ទាំងគ្រប់គ្រង",
+    "properties": "អចលនទ្រព្យ",
+    "room": "បន្ទប់",
+    "tenants": "អ្នកជួល",
+    "bookings": "ការកក់",
+    "payments": "ការទូទាត់",
+    "invoices": "វិក័យប័ត្រ",
+    "settings": "ការកំណត់",
+    "logout": "ចាកចេញ"
+  },
+  "translate": {
+    "language": "ភាសា"
+  },
+  "settings": {
+    "title": "ការកំណត់",
+    "edit_profile": "កែប្រូហ្វាល់",
+    "language": "ភាសា",
+    "support": "ជំនួយ",
+    "log_out": "ចេញ"
+  },
+  "edit_profile": {
+    "title": "កែប្រូហ្វាល់",
+    "first_name": "នាមខ្លួន",
+    "telegram": "លេខ Telegram/ឈ្មោះអ្នកប្រើប្រាស់ (ជាជម្រើស)",
+    "email": "អ៊ីមែល",
+    "phone_number": "លេខទូរស័ព្ទ",
+    "save": "រក្សាទុក",
+    "placeholders": {
+      "enter_first_name": "បញ្ចូលនាមខ្លួន",
+      "enter_telegram": "បញ្ចូលឈ្មោះ Telegram",
+      "enter_email": "youremail@example.com"
+    }
+  },
+  "home_screen": {
+    "nearyourArea": "នៅជិតតំបន់របស់អ្នក",
+    "findyourRoom": "រកបន្ទប់របស់អ្នក",
+    "more": "ច្រើនទៀត"
+  },
+  "map_screen": {
+    "placeholder": "ស្វែងរក",
+    "description": "ការពិពណ៌នា",
+    "view_more": "មើលច្រើនទៀត"
+  },
+  "bookmark": {
+    "clearAll": "លុបចោលទាំងអស់"
+  },
+  "location_preview": {
+    "roomDetails": "ព័ត៌មានបន្ទប់",
+    "electricity": "អគ្គិសនី",
+    "water": "ទឹក",
+    "garbage": "សំណល់",
+    "internet": "អ៊ីនធឺណិត",
+    "descriptionTitle": "ការពិពណ៌នា",
+    "roomFeature": "លក្ខណៈបន្ទប់",
+    "locationOnMap": "ទីតាំងលើផែនទី",
+    "contactOwner": "ទំនាក់ទំនងម្ចាស់ផ្ទះ",
+    "book": "កក់"
+  },
+  "booking_screen": {
+    "roomDetails": "ព័ត៌មានបន្ទប់",
+    "setTheDate": "កំណត់កាលបរិច្ឆេទ",
+    "setTheDateDescription": "សូមកំណត់កាលបរិច្ឆេទដែលអ្នកចូលនៅ",
+    "phoneNumber": "លេខទូរស័ព្ទ",
+    "enterPhoneNumber": "បញ្ចូលលេខទូរស័ព្ទរបស់អ្នក",
+    "profession": "មុខរបរ",
+    "uploadIdCard": "ផ្ទុកអត្តសញ្ញាណប័ណ្ណ",
+    "rentType": "ប្រភេទជួល",
+    "rentDuration": "រយៈពេលជួល",
+    "month": "ខែ",
+    "bookNow": "កក់ឥឡូវនេះ"
+  },
+  "error_screen": {
+    "back": "ត្រលប់"
+  },
+  "notification_screen": {
+    "notification": "ការជូនដំណឹង"
+  }
+}

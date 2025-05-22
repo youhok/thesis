@@ -1,0 +1,340 @@
+{
+  "intro_1": {
+    "title": "Find Your Property",
+    "description": "Explore a wide range of properties tailored to your needs, from cozy apartments to spacious homes.",
+    "next": "Next"
+  },
+  "intro_2": {
+    "title": "Collect Rent Easily",
+    "description": "Simplify rent management with easy tracking and payment reminders",
+    "next": "Next"
+  },
+  "signup_landlord": {
+    "title": "Sign Up as a Landlord",
+    "name_label": "Name",
+    "name_hint": "Enter your name",
+    "email_label": "Email",
+    "email_hint": "Enter your email",
+    "phone_label": "Phone number",
+    "phone_hint": "Enter your phone number",
+    "password_label": "Password",
+    "password_hint": "Enter your password",
+    "upload_id_card": "Upload ID card",
+    "sign_up": "Sign up",
+    "already_have_account": "Already have an account?",
+    "sign_in": "Sign in"
+  },
+  "signin_landlord": {
+    "title": "Sign in as a Landlord",
+    "phone_email_label": "Phone number / email",
+    "phone_email_hint": "Enter your phone number or email",
+    "password_label": "Password",
+    "password_hint": "Enter your password",
+    "forgot_password": "Forgot your password?",
+    "sign_in": "Sign in",
+    "already_have_account": "Already have an account?",
+    "sign_up": "Sign up"
+  },
+  "role": {
+    "title": "Who are you?",
+    "description": "Please select your role to proceed and explore tailored features designed just for you.",
+    "landlord": "Landlord",
+    "managelandlord": "Manage your own properties",
+    "tenants": "Tenants",
+    "managetenants": "Log in to your rental account"
+  },
+  "signin_tenant": {
+    "signInAsTenant": "Sign in as a tenant",
+    "Email": "email",
+    "enterEmail": "Enter your email",
+    "password": "Password",
+    "enterPassword": "Enter your password",
+    "forgotPassword": "Forgot your password?",
+    "signIn": "Sign in",
+    "orSignUpWithGmail": "Or sign up with Gmail",
+    "signUpWithGoogle": "Sign up with Google",
+    "alreadyHaveAccount": "Already have an account?",
+    "signUp": "Sign up",
+    "language": "Language"
+  },
+  "signup_Tenant": {
+    "signUpAsTenant": "Sign Up as a Tenant",
+    "name": "Name",
+    "enterName": "Enter your name",
+    "Email": "Email",
+    "enterEmail": "Enter  email",
+    "password": "Password",
+    "enterPassword": "Enter your password",
+    "signUp": "Sign Up",
+    "orSignUpWithGmail": "Or Sign Up with Gmail",
+    "signUpWithGoogle": "Sign Up with Google",
+    "alreadyHaveAccount": "Already have an account?",
+    "signIn": "Sign In"
+  },
+  "forget_password_screen": {
+    "forgetpassword": "Forget Password",
+    "label": "Email",
+    "placeholder": "Enter you  email",
+    "continue": "Continue",
+    "alreadyHaveAccount": "Already have an account?",
+    "signIn": "Sign In"
+  },
+  "loading_screen": {
+    "findroom": "Find Room & Manage Property"
+  },
+  "verification": {
+    "verify": "Verify",
+    "resendcode": "Resend Code"
+  },
+  "property_list": {
+    "title": "Properties",
+    "search_placeholder": "Search property title / Id"
+  },
+  "add_property_step_1": {
+    "title": "Add New Property",
+    "update_title": "Update Property",
+    "section_title": "Get Started Managing Your Property",
+    "property_name": "Property Name",
+    "address": "Address",
+    "set_location": "Set on Map",
+    "add_images": "Add Images",
+    "description_optional": "Description (Optional)",
+    "enter_description": "Enter Description",
+    "next": "Next"
+  },
+  "add_property_step_2": {
+    "water_price": "Water Price",
+    "electricity_price": "Electricity Price",
+    "garbage_price": "Garbage",
+    "internet_price": "Internet",
+    "add_property": "Add Property"
+  },
+  "property_detail": {
+    "title": "Property Details",
+    "location": "Location",
+    "property_id": "Property ID",
+    "rooms": "Rooms",
+    "price_per_month": "Price / month",
+    "description": "Description",
+    "room_feature": "Room Feature",
+    "location_on_map": "Location on map",
+    "delete_property": "Delete this property?",
+    "edit": "Edit",
+    "manage_rooms": "Manage Rooms",
+    "utilities": {
+      "electricity": "Electricity",
+      "water": "Water",
+      "garbage": "Garbage",
+      "internet": "Internet"
+    }
+  },
+  "add_room_screen": {
+    "addnewroom": "Add New Rooms",
+    "edit_room": "Edit Room",
+    "selectproperty": "Select Property",
+    "Numberofroom": "Number of Room to create",
+    "Number_name": "Number Name",
+    "Roomprice": "Room Price",
+    "isavailable": "isAvailable",
+    "status": "Status",
+    "room_features": "Room Feature",
+    "AddRoom": "Add Room",
+    "update_room": "Update Room"
+  },
+  "tenant": {
+    "title": "Tenants",
+    "placeholders": "Search Name /Phone Number"
+  },
+  "add_tenant": {
+    "assign_to_room": "Assign to Room",
+    "assign_to_property": "Assign to Property",
+    "full_name": "Full Name",
+    "gender": "Gender",
+    "date_of_birth": "Date of Birth",
+    "move_in_date": "Move In Date",
+    "profession": "Profession",
+    "address": "Address",
+    "phone_number": "Phone Number",
+    "telegram_phone_number": "Telegram Phone Number/Username (Optional)",
+    "id_card": "ID Card",
+    "submit": "Submit",
+    "add_tenant": "Add Tenants",
+    "placeholders": {
+      "enter_full_name": "Enter Full Name",
+      "enter_profession": "Enter Profession",
+      "enter_address": "Enter Address",
+      "enter_phone_number": "Enter Phone Number",
+      "enter_telegram_contact": "Enter Telegram Contact"
+    },
+    "labels": {
+      "male": "Male",
+      "female": "Female"
+    }
+  },
+  "tenant_detail": {
+    "title": "Tenants Details",
+    "property_id": "Property ID",
+    "room_id": "Room ID",
+    "address": "Address",
+    "date_of_birth": "Date of Birth",
+    "profession": "Profession"
+  },
+  "invoice_list": {
+    "title": "Invoice Lists",
+    "placeholders": "Search Name"
+  },
+  "invoice_detail": {
+    "title": "Invoice Details"
+  },
+  "generate_invoice": {
+    "title": "Create New Invoice",
+    "edit_invoice": "Edit Invoice",
+    "tenants": "Tenant",
+    "choose_tenant": "Select a tenant",
+    "pay_date": "Payment Date",
+    "rent_type": "Duration Type",
+    "monthly": "Months",
+    "year": "Year",
+    "new_water": {
+      "label": "New Water Usage",
+      "placeholder": "Enter current water usage"
+    },
+    "new_electricity": {
+      "label": "New Electricity Usage",
+      "placeholder": "Enter current electricity usage"
+    },
+    "old_water": {
+      "label": "Previous Water Usage",
+      "placeholder": "Enter previous water usage"
+    },
+    "old_electricity": {
+      "label": "Previous Electricity Usage",
+      "placeholder": "Enter previous electricity usage"
+    },
+    "usage_water_unit": "Water Usage: 0 units",
+    "usage_electricity_unit": "Electricity Usage: 0 units",
+    "total": "Total Cost",
+    "ispaid": "Mark as Paid",
+    "generate": "Create Invoice",
+    "update": "Update Invoice",
+    "cancel": "Cancel"
+  },
+  "booking": {
+    "title": "Bookings",
+    "search_placeholder": "Search Booking name...",
+    "edit_booking": "Edit Bookings",
+    "pending": "Pending",
+    "approved": "Approved",
+    "rejected": "Rejected",
+    "profession": "Profession",
+    "address": "Address",
+    "telegram": "Telegram",
+    "rent_type": "Rent Type",
+    "rent_duration": "Rent Duration",
+    "create_at": "Created At",
+    "move_in": "Move In",
+    "move_out": "Move Out",
+    "id_card": "ID Card",
+    "utilities": {
+      "reject": "Reject",
+      "approve": "Approve"
+    },
+    "name": "Name",
+    "phone_number": "Phone Number",
+    "placeholder": "Enter Number",
+    "select_rooms": "Select Rooms",
+    "status": "Status",
+    "add_booking": "Add Booking",
+    "update_booking": "Update Booking"
+  },
+  "transaction": {
+    "title": "Transaction",
+    "placeholder": "Search date"
+  },
+  "dashboardlandlord": {
+    "title": "Dashboard",
+    "total_property": "Total Property",
+    "total_tenants": "Total Tenants",
+    "total_rooms": "Total Rooms",
+    "recent_tenants": "Recents Tenants",
+    "view_all": "View All"
+  },
+  "drawerlandlord": {
+    "dashboard": "Dashboard",
+    "properties": "Properties",
+    "room": "Rooms",
+    "tenants": "Tenants",
+    "bookings": "Bookings",
+    "payments": "Payments",
+    "invoices": "Invoices",
+    "settings": "Settings",
+    "logout": "Logout"
+  },
+  "translate": {
+    "language": "Language"
+  },
+  "settings": {
+    "title": "Settings",
+    "edit_profile": "Edit Profile",
+    "language": "Language",
+    "support": "Support",
+    "log_out": " Log Out"
+  },
+  "edit_profile": {
+    "title": "Edit Profile",
+    "first_name": "First Name",
+    "telegram": "Telegram Number/Username (Optional)",
+    "email": "Email",
+    "phone_number": "Phone Number",
+    "save": "Save",
+    "placeholders": {
+      "enter_first_name": "Enter First Name",
+      "enter_telegram": "Enter Telegram Username",
+      "enter_email": "youremail@example.com"
+    }
+  },
+  "home_screen": {
+    "nearyourArea": "Near Your Area",
+    "findyourRoom": "Find Your Room",
+    "more": "More"
+  },
+  "map_screen": {
+    "placeholder": "Search",
+    "description": "Description",
+    "view_more": "View More"
+  },
+  "bookmark": {
+    "clearAll": "Clear All"
+  },
+  "location_preview": {
+    "roomDetails": "Room Details",
+    "electricity": "Electricity",
+    "water": "Water",
+    "garbage": "Garbage",
+    "internet": "Internet",
+    "descriptionTitle": "Description",
+    "roomFeature": "Room Features",
+    "locationOnMap": "Location on Map",
+    "contactOwner": "Contact Owner",
+    "book": "Book"
+  },
+  "booking_screen": {
+    "roomDetails": "Room Details",
+    "setTheDate": "Set Date",
+    "setTheDateDescription": "Please set the date you are checking in",
+    "phoneNumber": "Phone Number",
+    "enterPhoneNumber": "Enter your phone number",
+    "profession": "Profession",
+    "uploadIdCard": "Upload ID Card",
+    "rentType": "Rent Type",
+    "rentDuration": "Rent Duration",
+    "month": "Month",
+    "bookNow": "Book Now"
+  },
+  "error_screen": {
+    "back": "Back"
+  },
+  "notification_screen": {
+    "notification": "Notification"
+  }
+}
