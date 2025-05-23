@@ -173,8 +173,8 @@
   },
   "tenant_detail": {
     "title": "Tenants Details",
-    "property_id": "Property ID",
-    "room_id": "Room ID",
+    "property_name": "Property Name",
+    "room_name": "Room Name",
     "address": "Address",
     "date_of_birth": "Date of Birth",
     "profession": "Profession"

@@ -1,15 +1,16 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:sankaestay/util/constants.dart';
 
 class CustomImageUpload extends StatelessWidget {
   final File? imageFile;
+  final String? existingImageUrl; // Add this!
   final ValueChanged<File?> onImageChanged;
 
   const CustomImageUpload({
     super.key,
-    required this.imageFile,
+    this.imageFile,
+    this.existingImageUrl,
     required this.onImageChanged,
   });
 
@@ -40,8 +41,8 @@ class CustomImageUpload extends StatelessWidget {
             GestureDetector(
               onTap: () => _pickImage(context),
               child: Container(
-                width: 60,
-                height: 60,
+                width: 80,
+                height: 80,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(8),
                   color: Colors.grey[300],
@@ -64,12 +65,19 @@ class CustomImageUpload extends StatelessWidget {
           const SizedBox(height: 8),
           Row(
             children: [
-              TextButton.icon(
-                onPressed: () => onImageChanged(null),
-                icon: const Icon(Icons.delete, color: Colors.red),
-                label: const Text(
-                  "Clear Image",
-                  style: TextStyle(color: Colors.red),
+              Container(
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius:
+                      BorderRadius.circular(8), // add radius value here
+                ),
+                child: TextButton.icon(
+                  onPressed: () => onImageChanged(null),
+                  icon: const Icon(Icons.delete, color: Colors.red),
+                  label: const Text(
+                    "Clear Image",
+                    style: TextStyle(color: Colors.red),
+                  ),
                 ),
               ),
             ],

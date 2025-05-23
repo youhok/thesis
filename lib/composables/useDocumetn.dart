@@ -18,6 +18,10 @@ class FirestoreService {
     }
   }
 
+  Future<DocumentSnapshot> getDocument(String id) {
+    return collectionRef.doc(id).get();
+  }
+
   Future<String?> addDocumentId(Map<String, dynamic> data) async {
     try {
       final docRef =

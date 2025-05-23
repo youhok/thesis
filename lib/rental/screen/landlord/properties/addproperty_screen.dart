@@ -160,7 +160,7 @@ class _AddPropertyScreenState extends State<AddPropertyScreen> {
         'electricityPrice': electricityPrice,
         'garbagePrice': garbagePrice,
         'internetPrice': internetPrice,
-        'status': false,
+        'status': true,
       };
 
       if (widget.property != null && widget.property!['id'] != null) {

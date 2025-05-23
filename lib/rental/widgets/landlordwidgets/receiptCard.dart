@@ -124,7 +124,7 @@ class ReceiptCard extends StatelessWidget {
                       onPressed: onEdit,
                     ),
                     IconButton(
-                      icon: const Icon(Icons.credit_card,
+                      icon: const Icon(Icons.qr_code,
                           size: 20, color: Colors.green),
                       onPressed: onView,
                     ),
