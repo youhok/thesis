@@ -8,6 +8,7 @@ import 'package:http/http.dart' as http;
 import 'package:image_picker/image_picker.dart';
 import 'package:loader_overlay/loader_overlay.dart';
 import 'package:path_provider/path_provider.dart';
+import 'package:toastification/toastification.dart';
 import '../../../composables/useStorage.dart';
 import 'package:sankaestay/composables/useDocumetn.dart';
 
@@ -210,7 +211,13 @@ class _AddTenantsScreenState extends State<AddTenantsScreen> {
 
       if (isEdit) {
         await _tenantService.updateDocument(widget.tenantId!, data);
-        Get.snackbar('Success', 'Tenant updated successfully');
+        toastification.show(
+          context: context,
+          title: const Text("Success"),
+          description: const Text("Tenant updated successfully"),
+          type: ToastificationType.success,
+          autoCloseDuration: const Duration(seconds: 2),
+        );
       } else {
         data.addAll({
           'tenantID': _tenantService.collectionRef.doc().id,
@@ -221,11 +228,24 @@ class _AddTenantsScreenState extends State<AddTenantsScreen> {
           roomIDs[roomOptions.indexOf(selectedRoom.value!)],
           {'isAvailable': false},
         );
-        Get.snackbar('Success', 'Tenant added successfully');
+
+        toastification.show(
+          context: context,
+          title: const Text("Success"),
+          description: const Text("Tenant added successfully"),
+          type: ToastificationType.success,
+          autoCloseDuration: const Duration(seconds: 2),
+        );
       }
       Navigator.pop(context);
     } catch (e) {
-      Get.snackbar('Error', 'Failed to save tenant data');
+      toastification.show(
+        context: context,
+        title: const Text("Error"),
+        description: const Text("Failed to save tenant data"),
+        type: ToastificationType.error,
+        autoCloseDuration: const Duration(seconds: 2),
+      );
     } finally {
       context.loaderOverlay.hide();
     }

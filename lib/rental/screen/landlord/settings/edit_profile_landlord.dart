@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:loader_overlay/loader_overlay.dart';
 import 'package:sankaestay/composables/useStorage.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:sankaestay/rental/widgets/dynamicscreen/base_screen.dart';
@@ -68,6 +69,8 @@ class _EditProfileState extends State<EditProfileLandlord> {
   Future<void> updateProfile() async {
     if (!_formKey.currentState!.validate()) return;
 
+    context.loaderOverlay.show();
+    // Show loading
     String? uploadedUrl = imageUrl;
 
     if (imageFile != null) {
@@ -122,6 +125,8 @@ class _EditProfileState extends State<EditProfileLandlord> {
         title: 'Update Failed',
         description: e.toString(),
       );
+    } finally {
+      context.loaderOverlay.hide(); // Always hide loader
     }
   }
 

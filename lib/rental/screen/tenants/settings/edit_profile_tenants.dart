@@ -1,10 +1,19 @@
+import 'dart:io';
+
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:image_picker/image_picker.dart';
+import 'package:loader_overlay/loader_overlay.dart';
+import 'package:sankaestay/composables/useStorage.dart';
 import 'package:sankaestay/rental/widgets/Custom_button.dart';
 import 'package:sankaestay/rental/widgets/dynamicscreen/base_screen.dart';
 import 'package:sankaestay/rental/widgets/phone_number_input.dart';
+import 'package:sankaestay/util/alert/alert.dart';
 import 'package:sankaestay/util/constants.dart';
 import 'package:sankaestay/widgets/Custom_Text_Field.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'package:toastification/toastification.dart';
 
 class EditProfileTenants extends StatefulWidget {
   const EditProfileTenants({super.key});
@@ -14,11 +23,118 @@ class EditProfileTenants extends StatefulWidget {
 }
 
 class _EditProfileTenantsState extends State<EditProfileTenants> {
+  final _formKey = GlobalKey<FormState>();
+  final _nameController = TextEditingController();
+  final _telegramController = TextEditingController();
+  final _emailController = TextEditingController();
+  final _phoneController = TextEditingController();
+
+  String userId = '';
+  String? imageUrl;
+  File? imageFile;
+
+  final ImagePicker _picker = ImagePicker();
+  final storageService = StorageService();
+
+  @override
+  void initState() {
+    super.initState();
+    getUserData();
+  }
+
+  Future<void> getUserData() async {
+    final prefs = await SharedPreferences.getInstance();
+    final name = prefs.getString('userName') ?? 'Unknown User';
+    final imgUrl = prefs.getString('userImageUrl') ?? '';
+    final telegram = prefs.getString('userTelegram') ?? '';
+    final email = prefs.getString('userEmail') ?? '';
+    final phone = prefs.getString('userPhoneNumber') ?? '';
+    userId = prefs.getString('userId') ?? ''; // Make sure userId is saved
+    _nameController.text = name;
+    _emailController.text = email;
+    _telegramController.text = telegram;
+    _phoneController.text = phone;
+    imageUrl = imgUrl;
+    setState(() {});
+  }
+
+  Future<void> pickImage() async {
+    final pickedFile = await _picker.pickImage(source: ImageSource.gallery);
+    if (pickedFile != null) {
+      setState(() {
+        imageFile = File(pickedFile.path);
+      });
+    }
+  }
+
+  Future<void> updateProfile() async {
+    if (!_formKey.currentState!.validate()) return;
+
+    context.loaderOverlay.show();
+
+    String? uploadedUrl = imageUrl;
+
+    if (imageFile != null) {
+      try {
+        // Delete old image if from Firebase
+        if (imageUrl != null &&
+            imageUrl!.isNotEmpty &&
+            imageUrl!.contains('firebasestorage.googleapis.com')) {
+          await storageService.deleteImageByUrl(imageUrl!);
+        }
+
+        // Upload new image
+        uploadedUrl = await storageService.uploadImage(
+          'users/$userId/profile.jpg',
+          imageFile!,
+        );
+      } catch (e) {
+        Alert.show(
+          type: ToastificationType.error,
+          title: 'Image Upload Error',
+          description: e.toString(),
+        );
+        return;
+      }
+    }
+
+    try {
+      await FirebaseFirestore.instance.collection('users').doc(userId).update({
+        'name': _nameController.text.trim(),
+        'telegram': _telegramController.text.trim(),
+        'phone': _phoneController.text.trim(),
+        'email': _emailController.text.trim(),
+        'imageURL': uploadedUrl ?? '',
+        'updatedAt': FieldValue.serverTimestamp(),
+      });
+
+      final prefs = await SharedPreferences.getInstance();
+      await prefs.setString('userName', _nameController.text.trim());
+      await prefs.setString('userEmail', _emailController.text.trim());
+      await prefs.setString('userImageUrl', uploadedUrl ?? '');
+      await prefs.setString('userTelegram', _telegramController.text.trim());
+      await prefs.setString('userPhoneNumber', _phoneController.text.trim());
+
+      Alert.show(
+        type: ToastificationType.success,
+        title: 'Success',
+        description: 'Profile updated successfully',
+      );
+    } catch (e) {
+      Alert.show(
+        type: ToastificationType.error,
+        title: 'Update Failed',
+        description: e.toString(),
+      );
+    } finally {
+      context.loaderOverlay.hide(); // Always hide loader
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
-    TextEditingController phoneController = TextEditingController();
     return BaseScreen(
-      title: "edit_profile.title".tr, 
+      title: "edit_profile.title".tr,
       child: Stack(
         children: [
           Column(
@@ -35,40 +151,60 @@ class _EditProfileTenantsState extends State<EditProfileTenants> {
                   child: Padding(
                     padding: const EdgeInsets.all(20.0),
                     child: SingleChildScrollView(
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Center(
-                            child: ProfileAvatar(
-                              imagePath:
-                                  'images/person.png', // Replace with your image asset path
-                              onEdit: () {
-                                print("Edit button clicked");
-                              },
+                      child: Form(
+                        key: _formKey,
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Center(
+                              child: ProfileAvatar(
+                                imageFile: imageFile,
+                                imageUrl: imageUrl,
+                                onEdit: pickImage,
+                              ),
                             ),
-                          ),
-                          const SizedBox(height: 10),
-                          // First Name Field
-                          CustomTextField(
-                              label: "edit_profile.first_name".tr, hintText: "edit_profile.placeholders.enter_first_name".tr),
-                          const SizedBox(height: 10),
-                        
-                          // Telegram Username Field
-                          CustomTextField(
-                            label: "edit_profile.telegram".tr,
-                            hintText: "edit_profile.placeholders.enter_telegram".tr,
-                          ),
-                           const SizedBox(height: 10),
+                            const SizedBox(height: 10),
                             CustomTextField(
-                              label: "edit_profile.email".tr, hintText: "edit_profile.placeholders.enter_email".tr),
-                    
-                          const SizedBox(height: 10),
-                          PhoneNumberInput(label: "edit_profile.phone_number".tr, controller: phoneController),
-                          SizedBox(
-                            height: 20,
-                          ),
-                          Custombutton(onPressed: () {}, text: "edit_profile.save".tr)
-                        ],
+                              label: "edit_profile.first_name".tr,
+                              hintText:
+                                  "edit_profile.placeholders.enter_first_name"
+                                      .tr,
+                              controller: _nameController,
+                              validator: (value) =>
+                                  value == null || value.isEmpty
+                                      ? 'Please enter name'
+                                      : null,
+                            ),
+                            const SizedBox(height: 10),
+                            CustomTextField(
+                              label: "edit_profile.telegram".tr,
+                              hintText:
+                                  "edit_profile.placeholders.enter_telegram".tr,
+                              controller: _telegramController,
+                            ),
+                            const SizedBox(height: 10),
+                            CustomTextField(
+                              label: "edit_profile.email".tr,
+                              hintText:
+                                  "edit_profile.placeholders.enter_email".tr,
+                              controller: _emailController,
+                              validator: (value) =>
+                                  value == null || !value.contains('@')
+                                      ? 'Invalid email'
+                                      : null,
+                            ),
+                            const SizedBox(height: 10),
+                            PhoneNumberInput(
+                              label: "edit_profile.phone_number".tr,
+                              controller: _phoneController,
+                            ),
+                            const SizedBox(height: 20),
+                            Custombutton(
+                              onPressed: updateProfile,
+                              text: "edit_profile.save".tr,
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                   ),
@@ -78,22 +214,34 @@ class _EditProfileTenantsState extends State<EditProfileTenants> {
           ),
         ],
       ),
-      );
+    );
   }
 }
 
 class ProfileAvatar extends StatelessWidget {
-  final String imagePath;
+  final String? imageUrl;
+  final File? imageFile;
   final VoidCallback? onEdit;
 
   const ProfileAvatar({
     super.key,
-    required this.imagePath,
+    this.imageUrl,
+    this.imageFile,
     this.onEdit,
   });
 
   @override
   Widget build(BuildContext context) {
+    ImageProvider imageProvider;
+
+    if (imageFile != null) {
+      imageProvider = FileImage(imageFile!);
+    } else if (imageUrl != null && imageUrl!.isNotEmpty) {
+      imageProvider = NetworkImage(imageUrl!);
+    } else {
+      imageProvider = const AssetImage('images/user.png');
+    }
+
     return Stack(
       alignment: Alignment.bottomRight,
       children: [
@@ -102,7 +250,7 @@ class ProfileAvatar extends StatelessWidget {
           backgroundColor: Colors.white,
           child: CircleAvatar(
             radius: 55,
-            backgroundImage: AssetImage(imagePath),
+            backgroundImage: imageProvider,
           ),
         ),
         Positioned(

@@ -3,13 +3,37 @@ import 'package:get/get.dart';
 import 'package:sankaestay/auth/role/role_screen.dart';
 import 'package:sankaestay/composables/useAuth.dart';
 import 'package:sankaestay/rental/screen/language/language.dart';
+import 'package:sankaestay/rental/screen/tenants/settings/edit_profile_tenants.dart';
 import 'package:sankaestay/rental/widgets/Outlined_Button.dart';
 import 'package:sankaestay/rental/widgets/profile_menu_Item.dart';
 import 'package:sankaestay/rental/widgets/profile_user.dart';
 import 'package:sankaestay/util/constants.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
-class SettingScreen extends StatelessWidget {
+class SettingScreen extends StatefulWidget {
   const SettingScreen({super.key});
+
+  @override
+  State<SettingScreen> createState() => _SettingScreenState();
+}
+
+class _SettingScreenState extends State<SettingScreen> {
+  Future<Map<String, String>> getUserData() async {
+    final prefs = await SharedPreferences.getInstance();
+    final name = prefs.getString('userName') ?? 'Unknown User';
+    final imageUrl = prefs.getString('userImageUrl') ?? '';
+    final telegram = prefs.getString('userTelegram') ?? '';
+    final email = prefs.getString('userEmail') ?? '';
+    final phone = prefs.getString('userPhoneNumber') ?? '';
+    // Save this in EditProfile
+    return {
+      'name': name,
+      'imageUrl': imageUrl,
+      'telegram': telegram,
+      'email': email,
+      'phone': phone
+    };
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -34,15 +58,36 @@ class SettingScreen extends StatelessWidget {
                         child: Column(
                           children: [
                             // Profile Card
-                            ProfileUser(
-                                imagePath: 'images/person.png',
-                                name: "Heng Youhok"),
+                            FutureBuilder<Map<String, String>>(
+                              future: getUserData(),
+                              builder: (context, snapshot) {
+                                if (snapshot.connectionState ==
+                                    ConnectionState.waiting) {
+                                  return const CircularProgressIndicator();
+                                }
+
+                                final name =
+                                    snapshot.data?['name'] ?? 'Unknown User';
+                                final imageUrl =
+                                    snapshot.data?['imageUrl'] ?? '';
+
+                                return ProfileUser(
+                                  name: name,
+                                  imagePath: imageUrl.isNotEmpty
+                                      ? imageUrl
+                                      : 'images/user.png', // fallback to default
+                                  isNetworkImage: imageUrl.isNotEmpty,
+                                );
+                              },
+                            ),
 
                             const SizedBox(height: 20),
                             ProfileMenuItem(
                               icon: Icons.edit,
                               text: 'settings.edit_profile'.tr,
-                              onTap: () {},
+                              onTap: () {
+                                Get.to(() => const EditProfileTenants());
+                              },
                             ),
                             ProfileMenuItem(
                               icon: Icons.language,

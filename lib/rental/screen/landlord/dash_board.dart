@@ -148,8 +148,8 @@ class _DashboardState extends State<Dashboard> {
                 },
               ),
               Positioned(
-                right: 8,
-                top: 8,
+                right: 7,
+                top: 4,
                 child: Container(
                   width: 18,
                   height: 18,

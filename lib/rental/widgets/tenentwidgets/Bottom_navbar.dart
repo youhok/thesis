@@ -1,13 +1,13 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
-import 'package:sankaestay/rental/screen/tenants/bookmark_screen.dart';
+import 'package:sankaestay/rental/screen/notification/notification_screen.dart';
+// import 'package:sankaestay/rental/screen/tenants/bookmark_screen.dart';
 import 'package:sankaestay/rental/screen/tenants/dashboard_screen.dart';
-import 'package:sankaestay/rental/screen/tenants/home_screen.dart';
-import 'package:sankaestay/rental/screen/tenants/map_screen.dart';
+// import 'package:sankaestay/rental/screen/tenants/home_screen.dart';
+// import 'package:sankaestay/rental/screen/tenants/map_screen.dart';
 import 'package:sankaestay/rental/screen/tenants/setting_screen.dart';
 import 'package:sankaestay/rental/util/icon_util.dart';
 import 'package:sankaestay/util/constants.dart';
-
 
 class BottomNavBar extends StatefulWidget {
   const BottomNavBar({super.key});
@@ -21,17 +21,18 @@ class _BottomNavBarState extends State<BottomNavBar> {
 
   // List of pages
   final List<Widget> pages = [
-    const HomeScreen(),
-    const MapScreen(),
+    // const HomeScreen(),
+    // const MapScreen(),
     const DashboardScreen(),
-    const BookmarkScreen(),
+    // const BookmarkScreen(),
     const SettingScreen(),
   ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColors.secondaryGrey, // Keep background color consistent
+      backgroundColor:
+          AppColors.secondaryGrey, // Keep background color consistent
       body: Column(
         children: [
           // Common AppBar
@@ -48,23 +49,37 @@ class _BottomNavBarState extends State<BottomNavBar> {
                     const SizedBox(width: 10),
                     const Text(
                       'SangkaeStay',
-                      style: TextStyle(color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold),
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold),
                     ),
                   ],
                 ),
                 Stack(
                   children: [
                     IconButton(
-                      onPressed: () {},
-                      icon: const Icon(Icons.notifications, color: Colors.white),
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (_) => const NotificationScreen(),
+                          ),
+                        );
+                      },
+                      icon:
+                          const Icon(Icons.notifications, color: Colors.white),
                     ),
                     Positioned(
-                      right: 8,
-                      top: 8,
+                      right: 5,
+                      top: 2,
                       child: Container(
                         padding: const EdgeInsets.all(5),
-                        decoration: const BoxDecoration(color: Colors.red, shape: BoxShape.circle),
-                        child: const Text('5', style: TextStyle(color: Colors.white, fontSize: 12)),
+                        decoration: const BoxDecoration(
+                            color: Colors.red, shape: BoxShape.circle),
+                        child: const Text('5',
+                            style:
+                                TextStyle(color: Colors.white, fontSize: 12)),
                       ),
                     ),
                   ],
@@ -92,10 +107,10 @@ class _BottomNavBarState extends State<BottomNavBar> {
           });
         },
         items: const [
-          Icon(AppIcons.home, color: Colors.white, size: 25),
-          Icon(AppIcons.maps, color: Colors.white, size: 25),
+          // Icon(AppIcons.home, color: Colors.white, size: 25),
+          // Icon(AppIcons.maps, color: Colors.white, size: 25),
           Icon(AppIcons.dashboard, color: Colors.white, size: 25),
-          Icon(AppIcons.bookmark, color: Colors.white, size: 25),
+          // Icon(AppIcons.bookmark, color: Colors.white, size: 25),
           Icon(AppIcons.settings, color: Colors.white, size: 25),
         ],
       ),

@@ -6,7 +6,6 @@ import 'package:sankaestay/rental/screen/landlord/addtenants_screen.dart';
 import 'package:sankaestay/rental/util/icon_util.dart';
 import 'package:sankaestay/rental/widgets/Custom_Icon_button.dart';
 import 'package:sankaestay/rental/widgets/dynamicscreen/base_screen.dart';
-import 'package:sankaestay/rental/widgets/receipt_card.dart';
 
 class TenantsDetailScreen extends StatefulWidget {
   final String tenantId;

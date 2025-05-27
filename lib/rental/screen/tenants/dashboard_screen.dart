@@ -1,11 +1,42 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:sankaestay/rental/util/icon_util.dart';
 import 'package:sankaestay/rental/widgets/Info_Row.dart';
 import 'package:sankaestay/rental/widgets/receipt_card.dart';
 import 'package:sankaestay/util/constants.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
-class DashboardScreen extends StatelessWidget {
+class DashboardScreen extends StatefulWidget {
   const DashboardScreen({super.key});
+
+  @override
+  State<DashboardScreen> createState() => _DashboardScreenState();
+}
+
+class _DashboardScreenState extends State<DashboardScreen> {
+  @override
+  void initState() {
+    super.initState();
+    loadUserProfile();
+  }
+
+  Future<void> loadUserProfile() async {
+    final prefs = await SharedPreferences.getInstance();
+    final userId = prefs.getString('userId') ?? '';
+    if (userId.isEmpty) return;
+
+    final userDoc =
+        await FirebaseFirestore.instance.collection('users').doc(userId).get();
+
+    if (userDoc.exists) {
+      final data = userDoc.data()!;
+      await prefs.setString('userName', data['name'] ?? '');
+      await prefs.setString('userImageUrl', data['imageURL'] ?? '');
+      await prefs.setString('userTelegram', data['telegram'] ?? '');
+      await prefs.setString('userEmail', data['email'] ?? '');
+      await prefs.setString('userPhoneNumber', data['phone'] ?? '');
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -20,16 +51,6 @@ class DashboardScreen extends StatelessWidget {
         'paid': false,
         'total': '65.0\$'
       },
-      {
-        'month': 'September 2024',
-        'receiptNo': '5812',
-        'electricity': '27 kwh',
-        'water': '3 m3',
-        'internet': '0 \$',
-        'garbage': '0 \$',
-        'paid': true,
-        'total': '65.0\$'
-      }
     ];
 
     return Scaffold(
@@ -137,7 +158,7 @@ class DashboardScreen extends StatelessWidget {
                             height: 20,
                           ),
                           _buildUtilityInfo(),
-                           SizedBox(
+                          SizedBox(
                             height: 20,
                           ),
                           // Contact Card Section
@@ -186,17 +207,16 @@ class DashboardScreen extends StatelessWidget {
                               ],
                             ),
                           ),
-                           SizedBox(
+                          SizedBox(
                             height: 20,
                           ),
                           //Receipt card
-                           Column(
+                          Column(
                             children: receipts
                                 .map((receipt) =>
                                     ReceiptCard(receiptData: receipt))
                                 .toList(),
                           ),
-
                         ],
                       ),
                     ),
@@ -225,11 +245,22 @@ class DashboardScreen extends StatelessWidget {
 Widget _buildUtilityInfo() {
   return Column(
     children: [
-      InfoRow(icon:AppIcons.electricity, label: "Electricity", value: ":0.35     \$ / kWh"),
-      InfoRow(icon:AppIcons.water, label:  "Water", value:  "       :0.35     \$ / m³"),
-      InfoRow(icon:AppIcons.delete, label: "Garbage", value: "  :0           \$ / month"),
-      InfoRow(icon:AppIcons.internet,label:  "Internet", value: "   :0           \$ / month"),
+      InfoRow(
+          icon: AppIcons.electricity,
+          label: "Electricity",
+          value: ":0.35     \$ / kWh"),
+      InfoRow(
+          icon: AppIcons.water,
+          label: "Water",
+          value: "       :0.35     \$ / m³"),
+      InfoRow(
+          icon: AppIcons.delete,
+          label: "Garbage",
+          value: "  :0           \$ / month"),
+      InfoRow(
+          icon: AppIcons.internet,
+          label: "Internet",
+          value: "   :0           \$ / month"),
     ],
   );
 }
-
