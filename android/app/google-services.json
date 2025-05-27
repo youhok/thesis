@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "179320462747",
+    "project_id": "thesis-sangkaestay",
+    "storage_bucket": "thesis-sangkaestay.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:179320462747:android:aa5e1aef21521c92a1953e",
+        "android_client_info": {
+          "package_name": "com.example.sankaestay"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "179320462747-5rvg4q036qehbd0htite7i1svh415duc.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.sankaestay",
+            "certificate_hash": "05bbd11044867500bcbf318b597df773fe722eb0"
+          }
+        },
+        {
+          "client_id": "179320462747-uabaani92s383qfs8l3e28ru0405jg4l.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDOnU5ZDJJKOWiONYRQEeO8zWSZI3l6gYM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "179320462747-uabaani92s383qfs8l3e28ru0405jg4l.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "179320462747-4u0jqqap17a4tnuj2gmiq4463osgp7ip.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.sankaestay"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
